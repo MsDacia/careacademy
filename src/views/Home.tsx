@@ -1,4 +1,7 @@
 import { component } from 'vue-tsx-support'
+import noteStore from '@/store/noteStore'
+
+import SidePanel from './SidePanel'
 
 export default component({
 	name: 'Home',
@@ -14,7 +17,18 @@ export default component({
 				</section>
 
 				<aside>
-					{/* Add and Update Notes form go here */}
+					<SidePanel>
+						{(() => {
+							switch (noteStore.activePanelComponent) {
+							case 'update-note':
+								return 'Update note'
+							case 'add-note':
+								return 'Add note'
+							default:
+								return null
+							}
+						})()}
+					</SidePanel>
 				</aside>
 			</main>
 		)
