@@ -26,7 +26,10 @@ cssRule('html, body', {
 })
 
 cssRule('main', {
-	overflow: 'hidden',
+	display: 'flex',
+	flexDirection: 'column',
+	margin: '0 auto',
+	maxWidth: 1440,
 	position: 'relative',
 
 	$nest: {
@@ -65,14 +68,9 @@ cssRule('main', {
 	},
 })
 
-cssRule('.container', {
-	$nest: {
-		'.container-form': {
-			height: viewHeight(100),
-			margin: '0 auto',
-			width: percent(100),
-		},
-	},
+cssRule('.container-form', {
+	maxWidth: 500,
+	width: percent(100),
 })
 
 cssRule('.enhanced-style', {

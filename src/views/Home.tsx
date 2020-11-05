@@ -1,5 +1,5 @@
 import * as theme from '@/ui/theme'
-import { margin, padding, percent, rem } from 'csx'
+import { padding, percent, rem } from 'csx'
 import { style } from 'typestyle'
 import { component } from 'vue-tsx-support'
 import noteStore from '@/store/noteStore'
@@ -45,8 +45,8 @@ const styleHeaderContent = style({
 	alignContent: 'center',
 	display: 'flex',
 	justifyContent: 'flex-end',
-	margin: margin(0, 0, 40),
-	padding: padding(20, 0),
+	margin: 0,
+	padding: 0,
 
 	$nest: {
 		'h1': {

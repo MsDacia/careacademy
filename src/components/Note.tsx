@@ -38,6 +38,7 @@ const styleListItem = style(
 		flexDirection: 'column',
 		justifyContent: 'space-between',
 		margin: margin(0, 20, 20, 0),
+		maxWidth: 400,
 		padding: padding(20, 14),
 		width: percent(40),
 
@@ -51,6 +52,8 @@ const styleListItem = style(
 		{
 			maxWidth: theme.computerBreakpoint,
 		}, {
+			marginRight: 0,
+			maxWidth: percent(100),
 			width: percent(100),
 		},
 	),

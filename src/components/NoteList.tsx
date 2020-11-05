@@ -1,5 +1,5 @@
 import * as theme from '@/ui/theme'
-import { percent } from 'csx'
+import { margin, percent } from 'csx'
 import { media, style } from 'typestyle'
 import { component } from 'vue-tsx-support'
 
@@ -32,8 +32,7 @@ const styleNoteList = style(
 		display: 'flex',
 		flexWrap: 'wrap',
 		listStyle: 'none',
-		margin: 0,
-		maxHeight: percent(23),
+		margin: margin(20, 0),
 		overflow: 'auto',
 		padding: 0,
 		width: percent(100),
@@ -41,14 +40,9 @@ const styleNoteList = style(
 
 	media(
 		{
-			minWidth: theme.largeMonitorBreakpoint,
+			maxWidth: theme.computerBreakpoint,
 		}, {
-			maxHeight: percent(50),
-		},
-		{
-			minWidth: theme.computerBreakpoint,
-		}, {
-			maxHeight: percent(40),
+			margin: 0,
 		},
 	),
 )
