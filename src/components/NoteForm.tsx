@@ -31,7 +31,7 @@ export default component({
 				personalNote: this.personalNote,
 			}
 
-			noteStore.selectedNote ? noteStore.updateNote(noteInfo) : noteStore.addNewNote(noteInfo)
+			noteStore.selectedNote ? noteStore.editNote(noteInfo) : noteStore.addNewNote(noteInfo)
 
 			this.resetForm()
 		},
@@ -51,13 +51,15 @@ export default component({
 					name="personalNote"
 					aria-label="Type a note"
 					aria-required="true"
+					data-test="personal-note-input"
 					v-model_trim={this.personalNote}></textarea>
 
 				<div>
-					<div onClick={() => this.onSubmit()}>
-						{noteStore.activePanelComponent === 'update-note' ? 'Update' : 'Add'} Note
+					<div onClick={() => this.onSubmit()} data-test="submit-note-form">
+						{noteStore.activePanelComponent === 'edit-note' ? 'Edit' : 'Add'} Note
 					</div>
-					<div onClick={() => this.resetForm()} data-message="Reset form">Reset</div>
+					<div onClick={() => this.resetForm()} data-test="reset-note-form">Reset</div>
+					<div onClick={() => noteStore.hideSidePanel()} data-test="cancel-note-form">Cancel</div>
 				</div>
 
 				<p>{noteStore.errorMessage}</p>

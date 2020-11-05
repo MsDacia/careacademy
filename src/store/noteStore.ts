@@ -5,7 +5,7 @@ export interface Note {
 	personalNote: string
 }
 
-type Panel = 'add-note' | 'update-note' | null
+type Panel = 'add-note' | 'edit-note' | null
 
 const state = Vue.observable({
 	activePanelComponent: null as Panel | null,
@@ -59,7 +59,7 @@ export default {
 
 	showSidePanel(note?: Note) {
 		if (note) {
-			state.activePanelComponent = 'update-note'
+			state.activePanelComponent = 'edit-note'
 			state.selectedNote = note
 		} else {
 			state.activePanelComponent = 'add-note'
@@ -67,7 +67,7 @@ export default {
 		}
 	},
 
-	updateNote(note: Note) {
+	editNote(note: Note) {
 		const index = state.allNotes.findIndex(c => c.uid === note.uid)
 		Vue.set(state.allNotes, index, note)
 		window.localStorage.setItem('personalNotes', JSON.stringify(state.allNotes))

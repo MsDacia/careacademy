@@ -7,14 +7,8 @@ export default component({
 	render() {
 		return (
 			<div>
-				{noteStore.isSidePanelOpen ?
-					<i
-						class="times icon"
-						onClick={() => noteStore.hideSidePanel()}
-						data-message="Close panel"
-					></i>
-					:
-					<p onClick={() => noteStore.showSidePanel()}>Add New Note</p>
+				{!noteStore.isSidePanelOpen &&
+					<p onClick={() => noteStore.showSidePanel()} data-test="add-personal-note">Add New Note</p>
 				}
 
 				{this.$slots.default}

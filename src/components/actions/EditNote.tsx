@@ -3,11 +3,11 @@ import { component } from 'vue-tsx-support'
 import NoteForm from '@/components/NoteForm'
 
 export default component({
-	name: 'UpdateNote',
+	name: 'EditNote',
 	render() {
 		return (
 			<section>
-				<h3>Update Note</h3>
+				<h3>Edit Note</h3>
 
 				<NoteForm />
 			</section>

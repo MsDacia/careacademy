@@ -14,8 +14,8 @@ export default component({
 				<p>{this.note.personalNote}</p>
 
 				<div>
-					<p onClick={() => noteStore.deleteNote(this.note.uid)}>Delete Note</p>
-					<p onClick={() => noteStore.showSidePanel(this.note)}>Update Note</p>
+					<p onClick={() => noteStore.deleteNote(this.note.uid)} data-test="delete-personal-note">Delete Note</p>
+					<p onClick={() => noteStore.showSidePanel(this.note)} data-test="edit-personal-note">Edit Note</p>
 				</div>
 			</li>
 		)

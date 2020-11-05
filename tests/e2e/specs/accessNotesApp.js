@@ -6,11 +6,11 @@ describe('Access note-taking app', () => {
 	})
 
 	it('should have note-taking header app', () => {
-		cy.contains('h1', 'Notes')
+		cy.contains('h1', 'Personal Notes')
 	})
 
 	it('should have zero notes in note-taking app', () => {
-		cy.contains('span', 'Zero')
+		cy.contains('b', 'Zero')
 		cy.contains('p', 'notes')
 	})
 
