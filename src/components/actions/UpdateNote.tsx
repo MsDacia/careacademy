@@ -1,5 +1,7 @@
 import { component } from 'vue-tsx-support'
 
+import NoteForm from '@/components/NoteForm'
+
 export default component({
 	name: 'UpdateNote',
 	render() {
@@ -7,7 +9,7 @@ export default component({
 			<section>
 				<h3>Update Note</h3>
 
-				{/* Not form goes here */}
+				<NoteForm />
 			</section>
 		)
 	},

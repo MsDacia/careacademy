@@ -1,7 +1,9 @@
 import { component } from 'vue-tsx-support'
 import noteStore from '@/store/noteStore'
 
+import AddNote from '@/components/actions/AddNote'
 import SidePanel from './SidePanel'
+import UpdateNote from '@/components/actions/UpdateNote'
 
 export default component({
 	name: 'Home',
@@ -21,9 +23,9 @@ export default component({
 						{(() => {
 							switch (noteStore.activePanelComponent) {
 							case 'update-note':
-								return 'Update note'
+								return <UpdateNote />
 							case 'add-note':
-								return 'Add note'
+								return <AddNote />
 							default:
 								return null
 							}
