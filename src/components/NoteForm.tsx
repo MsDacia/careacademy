@@ -57,7 +57,7 @@ export default component({
 					<div onClick={() => this.onSuccess()}>
 						{noteStore.activePanelComponent === 'update-note' ? 'Update' : 'Add'} Note
 					</div>
-					<div data-message="Reset form">Reset</div>
+					<div onClick={() => this.resetForm()} data-message="Reset form">Reset</div>
 				</div>
 
 				<p>{noteStore.errorMessage}</p>
