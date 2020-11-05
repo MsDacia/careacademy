@@ -23,7 +23,7 @@ export default component({
 		/**
 		 * Successful adding of note on submit
 		 */
-		onSuccess(): void {
+		onSubmit(): void {
 			this.showErrorMessage = false
 
 			const noteInfo: Note = {
@@ -54,7 +54,7 @@ export default component({
 					v-model_trim={this.personalNote}></textarea>
 
 				<div>
-					<div onClick={() => this.onSuccess()}>
+					<div onClick={() => this.onSubmit()}>
 						{noteStore.activePanelComponent === 'update-note' ? 'Update' : 'Add'} Note
 					</div>
 					<div onClick={() => this.resetForm()} data-message="Reset form">Reset</div>

@@ -69,7 +69,7 @@ export default {
 
 	updateNote(note: Note) {
 		const index = state.allNotes.findIndex(c => c.uid === note.uid)
-		state.allNotes[index] = note
+		Vue.set(state.allNotes, index, note)
 		window.localStorage.setItem('personalNotes', JSON.stringify(state.allNotes))
 
 		this.hideSidePanel()

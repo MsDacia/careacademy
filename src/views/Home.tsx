@@ -2,6 +2,7 @@ import { component } from 'vue-tsx-support'
 import noteStore from '@/store/noteStore'
 
 import AddNote from '@/components/actions/AddNote'
+import NoteList from '@/components/NoteList'
 import SidePanel from './SidePanel'
 import UpdateNote from '@/components/actions/UpdateNote'
 
@@ -15,7 +16,7 @@ export default component({
 				</header>
 
 				<section>
-					{/* Notes will go here */}
+					<NoteList />
 				</section>
 
 				<aside>
