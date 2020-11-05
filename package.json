@@ -9,6 +9,7 @@
     "serve": "vue-cli-service serve",
     "start": "npm run serve",
     "test:coverage": "npm test && open-cli coverage/lcov-report/index.html",
+    "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
     "test": "npm run test:unit"
   },
@@ -17,10 +18,10 @@
     "csx": "10.0.1",
     "shortid": "2.2.15",
     "typestyle": "2.1.0",
+    "vue": "2.6.11",
     "vue-router": "3.3.3",
     "vue-strict-prop": "0.3.6",
-    "vue-tsx-support": "2.3.3",
-    "vue": "2.6.11"
+    "vue-tsx-support": "2.3.3"
   },
   "devDependencies": {
     "@types/shortid": "0.0.29",
