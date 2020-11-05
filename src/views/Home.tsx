@@ -15,10 +15,6 @@ export default component({
 					<h1>Personal Notes</h1>
 				</header>
 
-				<section>
-					<NoteList />
-				</section>
-
 				<aside>
 					<SidePanel>
 						{(() => {
@@ -33,6 +29,10 @@ export default component({
 						})()}
 					</SidePanel>
 				</aside>
+
+				<section>
+					<NoteList />
+				</section>
 			</main>
 		)
 	},
