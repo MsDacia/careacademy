@@ -9,11 +9,6 @@ const routes = [
 		name: 'Home',
 		path: '/',
 	},
-	{
-		component: () => import(/* webpackChunkName: "about" */ '@/views/About'),
-		name: 'About',
-		path: '/about',
-	},
 ]
 
 export default new VueRouter({
