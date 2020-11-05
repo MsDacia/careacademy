@@ -4,7 +4,7 @@ import { NestedCSSProperties } from 'typestyle/lib/types'
 
 export const emSize = 14
 
-export const computerBreakpoint = 992
+export const computerBreakpoint = 767
 export const largeMonitorBreakpoint = 1600
 
 export const colorLight = '#eee'
