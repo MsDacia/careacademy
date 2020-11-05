@@ -6,8 +6,8 @@ export default component({
 	name: 'AddNote',
 	render() {
 		return (
-			<section>
-				<h3>Add New Note</h3>
+			<section class="container-form">
+				<h3 class="enhanced-style">Add New Note</h3>
 
 				<NoteForm />
 			</section>

@@ -6,8 +6,8 @@ export default component({
 	name: 'EditNote',
 	render() {
 		return (
-			<section>
-				<h3>Edit Note</h3>
+			<section class="container-form">
+				<h3 class="enhanced-style">Edit Note</h3>
 
 				<NoteForm />
 			</section>
