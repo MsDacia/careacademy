@@ -1,3 +1,6 @@
+import * as theme from '@/ui/theme'
+import { border, margin, padding, percent } from 'csx'
+import { media, style } from 'typestyle'
 import prop from 'vue-strict-prop'
 import { component } from 'vue-tsx-support'
 
@@ -10,14 +13,65 @@ export default component({
 	},
 	render(): JSX.Element {
 		return (
-			<li key={this.note.uid}>
+			<li class={styleListItem} key={this.note.uid}>
 				<p>{this.note.personalNote}</p>
 
-				<div>
-					<p onClick={() => noteStore.deleteNote(this.note.uid)} data-test="delete-personal-note">Delete Note</p>
-					<p onClick={() => noteStore.showSidePanel(this.note)} data-test="edit-personal-note">Edit Note</p>
+				<div class={styleNoteActions}>
+					<p data-test="delete-personal-note" onClick={() => noteStore.deleteNote(this.note.uid)}>Delete Note</p>
+					<p data-test="edit-personal-note" onClick={() => noteStore.showSidePanel(this.note)}>Edit Note</p>
 				</div>
 			</li>
 		)
+	},
+})
+
+const styleListItem = style(
+	{
+		backgroundColor: theme.opacityColorDarker,
+		borderBottom: border({
+			color: theme.colorPrimaryMedium,
+			style: 'solid',
+			width: 4,
+		}),
+		color: theme.colorPrimaryLight,
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'spaceBetween',
+		margin: margin(0, 20, 20, 0),
+		padding: padding(20, 14),
+		width: percent(40),
+
+		$nest: {
+			'p': {
+				fontSize: percent(150),
+			},
+		},
+	},
+	media(
+		{
+			maxWidth: theme.computerBreakpoint,
+		}, {
+			width: percent(100),
+		},
+	),
+)
+
+const styleNoteActions = style({
+	display: 'flex',
+	justifyContent: 'space-between',
+	marginTop: margin(25),
+
+	$nest: {
+		'p': {
+			color: theme.colorLight,
+			fontSize: percent(100),
+
+			$nest: {
+				'&:hover': {
+					color: theme.colorPrimaryHover,
+					textDecoration: 'underline',
+				},
+			},
+		},
 	},
 })

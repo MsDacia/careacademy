@@ -1,3 +1,6 @@
+import * as theme from '@/ui/theme'
+import { style } from 'typestyle'
+
 import { component } from 'vue-tsx-support'
 import * as shortid from 'shortid'
 import noteStore, { Note } from '@/store/noteStore'
@@ -12,7 +15,7 @@ export default component({
 	},
 	computed: {
 		isDisabled(): boolean {
-			return !this.personalNote
+			return this.personalNote === ''
 		},
 	},
 	mounted(): void {
@@ -48,22 +51,46 @@ export default component({
 		return (
 			<div>
 				<textarea
+					class={theme.elementTextarea}
 					name="personalNote"
 					aria-label="Type a note"
 					aria-required="true"
 					data-test="personal-note-input"
-					v-model_trim={this.personalNote}></textarea>
+					v-model_trim={this.personalNote}
+				></textarea>
 
-				<div>
-					<div onClick={() => this.onSubmit()} data-test="submit-note-form">
+				<div class={[styleButtons, 'enhanced-style']}>
+					<button
+						class={['button', { 'disabled': this.isDisabled }]}
+						onClick={() => this.onSubmit()}
+						data-test="submit-note-form"
+						disabled={this.isDisabled}
+					>
 						{noteStore.activePanelComponent === 'edit-note' ? 'Edit' : 'Add'} Note
-					</div>
-					<div onClick={() => this.resetForm()} data-test="reset-note-form">Reset</div>
-					<div onClick={() => noteStore.hideSidePanel()} data-test="cancel-note-form">Cancel</div>
+					</button>
+					<button
+						class="button"
+						data-test="reset-note-form"
+						onClick={() => this.resetForm()}
+					>Reset</button>
+					<button
+						class="button"
+						onClick={() => noteStore.hideSidePanel()}
+						data-test="cancel-note-form"
+					>Cancel</button>
 				</div>
 
-				<p>{noteStore.errorMessage}</p>
+				<div class="error message">
+					<p>{noteStore.errorMessage}</p>
+				</div>
 			</div>
 		)
 	},
+})
+
+const styleButtons = style({
+	display: 'flex',
+	justifyContent: 'space-evenly',
+	margin: 20,
+	width: 'auto',
 })
