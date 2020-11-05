@@ -36,7 +36,7 @@ const styleListItem = style(
 		color: theme.colorPrimaryLight,
 		display: 'flex',
 		flexDirection: 'column',
-		justifyContent: 'spaceBetween',
+		justifyContent: 'space-between',
 		margin: margin(0, 20, 20, 0),
 		padding: padding(20, 14),
 		width: percent(40),
